@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>GreenSock: Basic Tween</title>
+     
+<style>
+body{
+    width: 100%;
+    height: 100%;
+    background-color:grey;
+}
+.test{
+width:100%;
+height:600px;
+background-color: orange;
+}
+#logo {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-image: url("lightblue.png");
+
+}
+
+#logo1 {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-image: url("lightblue.png");
+    float: right;
+    top:-100px;
+}
+
+#hello {
+    position: relative;
+    height:250px;
+    width:510px;
+    background-image: url("hello.png");
+    float: right;
+    top:128px;
+    right: 605px;
+    opacity:0;
+}
+
+
+
+</style>
+</head>
+ 
+<body>
+<div class="test">
+
+<div id="logo"></div>
+ 
+ <div id="logo1"></div>
+
+ <div id="hello"></div>
+    
+ </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+
+ 
+ 
+<script>
+//we'll use a window.onload for simplicity, but typically it is best to use either jQuery's $(document).ready() or $(window).load() or cross-browser event listeners so that you're not limited to one.
+
+window.onload = function(){
+    var tl = new TimelineLite();
+    var logo = document.getElementById("logo")
+    var logo1 = document.getElementById("logo1")
+    var hello = document.getElementById("hello")
+
+    tl.to(logo, 1, {left:"30%"} )
+    tl.to(logo1, 1,{left:"-30%"}, '-=1')
+    tl.to(logo, 1, {top:"300px"}, '-=0.1')
+    tl.to(logo1, 1, {top:"200px"}, '-=1')
+    tl.to(hello, 1, {alpha:"1"}, '+=1')
+    tl.to(hello, 0.4, {top:"-330px", rotation:360}, '+=3')
+    tl.to(logo, 0.4, {left:"-55%"}, '-=0.4')
+    tl.to(logo1, 0.4,{left:"55%"}, '-=0.4')
+ 
+    
+    
+    
+};
+</script>
+ 
+ <div>
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+
+ <div>
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+
+ <div>
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+</body>
+</html>
